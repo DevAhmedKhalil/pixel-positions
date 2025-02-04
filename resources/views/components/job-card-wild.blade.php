@@ -1,4 +1,4 @@
-<div class="p-4 bg-white/5 rounded-xl flex gap-6">
+<div class="p-4 bg-white/5 rounded-xl flex gap-x-6">
 
     <div>
         <x-employer-logo/>
