@@ -1,10 +1,10 @@
-<div
-    class="p-4 bg-white/5 rounded-xl flex flex-col text-center border border-transparent hover:border-blue-800 group">
+<x-panel
+    class="flex flex-col text-center">
 
     <div class="self-start">Laracasts</div>
 
     <div class="py-8 font-bold">
-        <h3 class="group-hover:text-blue-600 text-xl">Video Producer</h3>
+        <h3 class="text-xl font-bold transition-colors group-hover:text-blue-600 duration-300">Video Producer</h3>
         <p class="text-sm mt-4">Full Time - From $60,000</p>
     </div>
 
@@ -18,5 +18,5 @@
 
     </div>
 
-</div>
+</x-panel>
 
