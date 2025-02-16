@@ -10,9 +10,6 @@
     ];
 @endphp
 
-<x-forms.field :name="$name">
-    
-    <x-slot name="label">{{ $label }}</x-slot>
+<x-forms.field :name="$name" :label="$label">
     <input {{ $attributes->merge($defaults) }}>
-
 </x-forms.field>
