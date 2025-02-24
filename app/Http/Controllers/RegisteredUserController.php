@@ -27,7 +27,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        return view('auth.register');
+//        return view('auth.register');
     }
 
     /**
