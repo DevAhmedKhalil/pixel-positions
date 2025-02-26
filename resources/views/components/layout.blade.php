@@ -1,5 +1,5 @@
 @php use Illuminate\Support\Facades\Vite; @endphp
-        <!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,19 @@
             <a href="#">Companies</a>
         </div>
 
-        <div>post a job</div>
+        @auth
+            <div class="space-x-6 font-bold">
+                <a href="/jobs/create">post a job </a>
+                {{--                <a href="/logout">Log Out</a>--}}
+            </div>
+        @endauth
+
+        @guest
+            <div class="space-x-6 font-bold">
+                <a href="/register">Sign Up</a>
+                <a href="/login">Log In</a>
+            </div>
+        @endguest
 
     </nav>
 
