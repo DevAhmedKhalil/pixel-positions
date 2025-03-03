@@ -65,4 +65,13 @@ class JobController extends Controller
 
         return redirect('/');
     }
+
+    public function destroy(Job $job)
+    {
+//        $this->authorize('delete', $job); // Optional: Restrict deletion to the owner
+        $job->delete();
+
+        return redirect('/')->with('success', 'Job deleted successfully.');
+    }
+
 }

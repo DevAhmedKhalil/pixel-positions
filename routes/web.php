@@ -11,6 +11,8 @@ Route::get('/', [JobController::class, 'index']);
 
 Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth');
 Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
+Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->middleware('auth')->name('jobs.destroy');
+
 
 Route::get('/search', SearchController::class);
 Route::get('/tags/{tag:name}', TagController::class); // tags/frontend

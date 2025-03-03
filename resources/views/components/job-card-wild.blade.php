@@ -23,5 +23,13 @@
         @endforeach
     </div>
 
+    <form action="{{ route('jobs.destroy', $job->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="text-white px-3 py-1 rounded hover:text-red-500">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </form>
+
 </x-panel>
 

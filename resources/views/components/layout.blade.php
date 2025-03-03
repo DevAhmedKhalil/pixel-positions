@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"
           rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -36,7 +38,7 @@
         @auth
             <div class="space-x-6 font-bold flex">
                 <a href="/jobs/create">post a job </a>
-                
+
                 <form method="POST" action="/logout">
                     @csrf
                     @method('DELETE')
