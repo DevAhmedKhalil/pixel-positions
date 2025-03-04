@@ -2,11 +2,20 @@
 
 namespace App\Providers;
 
+use App\Models\Job;
+use App\Policies\JobPolicy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    protected $policies = [
+        Job::class => JobPolicy::class,
+    ];
+
     /**
      * Register any application services.
      */
@@ -18,8 +27,9 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        Model::unguard(); // Disables mass assignment protection globally
+        Gate::policy(Job::class, JobPolicy::class);
     }
+
 }

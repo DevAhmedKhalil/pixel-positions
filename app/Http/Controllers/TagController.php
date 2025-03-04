@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use App\Models\Tag;
 
 class TagController extends Controller
@@ -12,5 +13,13 @@ class TagController extends Controller
 
         return view('results', ['jobs' => $tag->jobs]);
     }
+
+    public function destroy(Job $job)
+    {
+        $this->authorize('delete', $job);
+        $job->delete();
+        return redirect('/')->with('success', 'Job deleted successfully.');
+    }
+
 
 }

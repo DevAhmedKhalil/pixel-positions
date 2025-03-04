@@ -13,6 +13,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class JobController extends Controller
 {
@@ -66,9 +68,10 @@ class JobController extends Controller
         return redirect('/');
     }
 
+
     public function destroy(Job $job)
     {
-//        $this->authorize('delete', $job); // Optional: Restrict deletion to the owner
+        $this->authorize('delete', $job); // Ensures only the owner can delete
         $job->delete();
 
         return redirect('/')->with('success', 'Job deleted successfully.');
