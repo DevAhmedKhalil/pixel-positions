@@ -71,10 +71,11 @@ class JobController extends Controller
 
     public function destroy(Job $job)
     {
-        $this->authorize('delete', $job); // Ensures only the owner can delete
+        $this->authorize('delete', $job);
         $job->delete();
 
         return redirect('/')->with('success', 'Job deleted successfully.');
     }
+
 
 }

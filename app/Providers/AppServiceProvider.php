@@ -11,11 +11,6 @@ use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
-
-    protected $policies = [
-        Job::class => JobPolicy::class,
-    ];
-
     /**
      * Register any application services.
      */

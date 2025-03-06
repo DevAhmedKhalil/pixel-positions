@@ -12,6 +12,8 @@ class Tag extends Model
     /** @use HasFactory<TagFactory> */
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function jobs(): BelongsToMany
     {
         return $this->belongsToMany(Job::class);
